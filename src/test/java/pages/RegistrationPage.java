@@ -38,36 +38,42 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setFirstName(String value) {
+        firstNameInput.scrollIntoView(true);
         firstNameInput.setValue(value);
 
         return this;
     }
 
     public RegistrationPage setLastName(String value) {
+        lastNameInput.scrollIntoView(true);
         lastNameInput.setValue(value);
 
         return this;
     }
 
     public RegistrationPage setEmail(String value) {
+        userEmailInput.scrollIntoView(true);
         userEmailInput.setValue(value);
 
         return this;
     }
 
     public RegistrationPage setGender(String value) {
+        genderWrapper.scrollIntoView(true);
         genderWrapper.$(byText(value)).click();
 
         return this;
     }
 
     public RegistrationPage setUserNumber(String value) {
+        userNumberInput.scrollIntoView(true);
         userNumberInput.setValue(value);
 
         return this;
     }
 
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
+        calendarInput.scrollIntoView(true);
         calendarInput.click();
         calendarComponent.setDate(day, month, year);
 
@@ -75,12 +81,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubject(String value){
+        subjectInput.scrollIntoView(true);
         subjectInput.setValue(value).pressEnter();
 
         return this;
     }
 
     public RegistrationPage setHobby(String value){
+        hobbyInput.scrollIntoView(true);
         hobbyInput.$(byText(value)).click();
 
         return this;
@@ -93,12 +101,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setAddress(String value){
+        addressInput.scrollIntoView(true);
         addressInput.setValue(value);
 
         return this;
     }
 
     public RegistrationPage setState(String value){
+        stateInput.scrollIntoView(true);
         stateInput.click();
         stateSelector.$(byText(value)).click();
 
@@ -106,12 +116,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setCity(String value){
+        cityInput.scrollIntoView(true);
         cityInput.click();
         citySelector.$(byText(value)).click();
         return this;
     }
 
     public RegistrationPage submit(){
+        submitButton.scrollIntoView(true);
         submitButton.click();
 
         return this;
