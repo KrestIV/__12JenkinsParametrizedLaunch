@@ -47,7 +47,7 @@ public class TestBase {
         String pw = System.getProperty("pw");
         String server = System.getProperty("server");
 
-        return "https://" + login + ":" + pw + "@" + server + "/wd/hub";
+        return "https://" + login + ":" + pw + "@" + server + "/wd/hub";//https://user1:1234@selenoid.autotests.cloud/wd/hub
     }
 
     static String getBrowser(){
@@ -55,7 +55,8 @@ public class TestBase {
     }
 
     static String getBrowserVersion(){
-        return System.getProperty("version");
+        if(System.getProperty("browser").equals("ie")) return System.getProperty("version");
+        else return null;
     }
 
     static String getBrowserSize(){
