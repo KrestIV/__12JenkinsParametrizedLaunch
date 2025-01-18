@@ -47,7 +47,7 @@ public class TestBase {
         String pw = System.getProperty("pw");
         String server = System.getProperty("server");
 
-        return "https://" + login + ":" + pw + server + "/wd/hub";
+        return "https://" + login + ":" + pw + "@" + server + "/wd/hub";
     }
 
     static String getBrowser(){
