@@ -16,8 +16,11 @@ public class TestBase {
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = getResolution();
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        Configuration.browser = getBrowser();
+        Configuration.browserVersion = getBrowserVersion();
+        Configuration.browserSize = getBrowserSize();
+        Configuration.remote = getServer();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -39,7 +42,23 @@ public class TestBase {
         Attach.addVideo();
     }
 
-    static String getResolution(){
-        return System.getProperty("resolution","1920x1080");
+    static String getServer(){
+        String login = System.getProperty("login");
+        String pw = System.getProperty("pw");
+        String server = System.getProperty("server");
+
+        return "https://" + login + ":" + pw + server + "/wd/hub";
+    }
+
+    static String getBrowser(){
+        return System.getProperty("browser","chrome");
+    }
+
+    static String getBrowserVersion(){
+        return System.getProperty("version");
+    }
+
+    static String getBrowserSize(){
+        return System.getProperty("size","1920x1080");
     }
 }
