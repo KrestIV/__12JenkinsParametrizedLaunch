@@ -55,8 +55,7 @@ public class TestBase {
     }
 
     static String getBrowserVersion(){
-        return null;
-        //return System.getProperty("version", null);
+        return System.getProperty("version", null);
     }
 
     static String getBrowserSize(){
