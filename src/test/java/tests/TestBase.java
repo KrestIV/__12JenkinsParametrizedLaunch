@@ -55,8 +55,7 @@ public class TestBase {
     }
 
     static String getBrowserVersion(){
-        if(System.getProperty("browser").equals("ie")) return System.getProperty("version");
-        else return null;
+        return System.getProperty("version", null);
     }
 
     static String getBrowserSize(){
